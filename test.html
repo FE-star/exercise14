@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>localStorage存爆怎么办</title>
+    </head>
+    <body>
+        <script src="https://cdn.bootcss.com/should.js/13.1.2/should.js"></script>
+        <script src="./lib/storage.js"></script>
+        <script>
+        let i = 0
+        while (i++ < 100000) {
+            const tmp = (new Date).toString()
+            storage.set(`data-${i}`, { date: tmp })
+            storage.get(`data-${i}`).date.should.equal(tmp)
+        }
+        </script>
+    </body>
+</html>

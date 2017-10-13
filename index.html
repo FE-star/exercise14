@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>localStorage存爆怎么办</title>
+    </head>
+    <body>
+        <script>
+        let i = 0
+        while (true) {
+            try {
+                localStorage[`data-${i++}`] = JSON.stringify({ date: (new Date).toString() })
+            } catch(e) {
+                console.log(e)
+                break
+            }
+        }
+        </script>
+    </body>
+</html>
