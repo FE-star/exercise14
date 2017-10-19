@@ -11,7 +11,7 @@
         let i = 0
         while (i++ < 100000) {
             const tmp = (new Date).toString()
-            storage.set(`data-${i}`, { date: tmp })
+            storage.set(`data-${i}`, { date: tmp },'random')
             storage.get(`data-${i}`).date.should.equal(tmp)
         }
         </script>
