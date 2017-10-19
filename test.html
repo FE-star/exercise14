@@ -7,10 +7,11 @@
         <script src="https://cdn.bootcss.com/should.js/13.1.2/should.js"></script>
         <script src="./lib/storage.js"></script>
         <script>
+        localStorage.clear();
         let i = 0
         while (i++ < 100000) {
             const tmp = (new Date).toString()
-            storage.set(`data-${i}`, { date: tmp })
+            storage.set(`data-${i}`, { date: tmp },'random')
             storage.get(`data-${i}`).date.should.equal(tmp)
         }
         </script>
